@@ -73,3 +73,13 @@ npm install
 
 # Start the development server
 npm start
+```
+
+---
+
+## 📬 Contact & Contribution
+- 🧑‍💻 **Portfolio:** <a href="https://ahmedmaher-portfolio.vercel.app/" title="See My Portfolio">https://ahmedmaher-portfolio.vercel.app/</a>
+- 🔗 **LinkedIn:** <a href="https://www.linkedin.com/in/ahmed-maher-algohary" title="Contact via LinkedIn">https://www.linkedin.com/in/ahmed-maher-algohary</a>
+- 📧 **Email:** <a href="mailto:ahmedmaher.dev1@gmail.com" title="Contact via Email">ahmedmaher.dev1@gmail.com</a>
+
+> Contributions, suggestions, and bug reports are welcome. Feel free to open issues or pull requests.
