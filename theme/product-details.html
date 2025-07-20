@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://ahmedmaher-portfolio.vercel.app/
+ // TWITTER: https://twitter.com/AhmedMa77068093
+ // FACEBOOK: https://web.facebook.com/profile.php?id=100012154268952
+ // GITHUB: https://github.com/Ahmed-Maher77
+-->
+
+<html lang="en">
+<head>
+
+  <!-- ** Basic Page Needs ** -->
+  <meta charset="utf-8">
+  <title>Vex - Product Landing Page Boostarp Template</title>
+
+  <!-- ** Mobile Specific Metas ** -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Vex HTML Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Ahmed Maher">
+  <meta name="generator" content="Smartwatch Store">
+
+  <!-- theme meta -->
+  <meta name="theme-name" content="vex" />
+
+  <!-- ** Preload Critical Resources ** -->
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Droid&#43;Serif:400%7cJosefin&#43;Sans:300,400,600,700" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid&#43;Serif:400%7cJosefin&#43;Sans:300,400,600,700"></noscript>
+
+  <!-- ** Plugins Needed for the Project ** -->
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/themefisher-font/themefisher-font.min.css">
+  <link rel="stylesheet" href="plugins/slick/slick.min.css">
+
+  <!-- Stylesheets -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+</head><body id="body">
+
+<!-- preloader start -->
+<div class="preloader"></div>
+<!-- preloader end -->
+
+
+ <header class="navigation sticky-top bg-white">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="Vex" width="100px" />
+      </a>
+      <button
+        class="navbar-toggler p-0 border-0"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navigation"
+        aria-controls="navigation"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <style>
+          /* Mobile menu fixes - inline for immediate effect */
+          @media (max-width: 991.98px) {
+            .navbar-collapse {
+              position: absolute !important;
+              top: 100% !important;
+              left: 0 !important;
+              right: 0 !important;
+              background: white !important;
+              border-top: 1px solid #e9ecef !important;
+              box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+              z-index: 1000 !important;
+              display: none !important;
+              max-height: calc(100vh - 80px) !important;
+              overflow-y: auto !important;
+            }
+
+            .navbar-collapse.show {
+              display: block !important;
+            }
+
+            .navbar-nav {
+              padding: 1rem 0 !important;
+            }
+
+            .navbar-nav .nav-item {
+              border-bottom: 1px solid #f8f9fa !important;
+            }
+
+            .navbar-nav .nav-item:last-child {
+              border-bottom: none !important;
+            }
+
+            .navbar-nav .nav-link {
+              padding: 0.75rem 1rem !important;
+              color: #333 !important;
+              font-weight: 500 !important;
+            }
+
+            .navbar-nav .nav-link:hover {
+              background-color: #f8f9fa !important;
+            }
+          }
+
+          /* Ensure navbar toggler is clickable */
+          .navbar-toggler {
+            border: none !important;
+            padding: 0.5rem !important;
+            cursor: pointer !important;
+            z-index: 1001 !important;
+          }
+
+          .navbar-toggler:focus {
+            outline: none !important;
+            box-shadow: none !important;
+          }
+        </style>
+        <ul class="navbar-nav ml-auto mr-n0 mr-md-n3">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Products</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#!"
+              id="dropdown03"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Pages <i class="tf-ion-chevron-down"></i
+            ></a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown03">
+              <li>
+                <a class="dropdown-item" href="blog-details.html"
+                  >Blog Details</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="product-details.html"
+                  >Product Details</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="privacy-policy.html"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="terms-conditions.html"
+                  >Terms Conditions</a
+                >
+              </li>
+
+              <li class="dropdown dropdown-submenu dropright">
+                <a
+                  class="dropdown-item dropdown-toggle"
+                  href="#!"
+                  id="dropdown0301"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Sub Menu 01</a
+                >
+
+                <ul class="dropdown-menu" aria-labelledby="dropdown0301">
+                  <li>
+                    <a class="dropdown-item" href="index.html">Submenu 11</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="index.html">Submenu 12</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="dropdown dropdown-submenu dropleft">
+                <a
+                  class="dropdown-item dropdown-toggle"
+                  href="#!"
+                  id="dropdown0301"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Sub Menu 02</a
+                >
+
+                <ul class="dropdown-menu" aria-labelledby="dropdown0301">
+                  <li>
+                    <a class="dropdown-item" href="index.html">Submenu 21</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="index.html">Submenu 22</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#testimonial">Review</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Immediate mobile menu fix - inline for instant effect
+  document.addEventListener("DOMContentLoaded", function () {
+    // Mobile menu toggle
+    var navbarToggler = document.querySelector(".navbar-toggler");
+    var navbarCollapse = document.querySelector(".navbar-collapse");
+
+    if (navbarToggler && navbarCollapse) {
+      navbarToggler.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        // Toggle the show class
+        navbarCollapse.classList.toggle("show");
+
+        // Update aria-expanded
+        var isExpanded = navbarCollapse.classList.contains("show");
+        this.setAttribute("aria-expanded", isExpanded);
+
+        console.log("Mobile menu toggled:", isExpanded ? "open" : "closed");
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest(".navbar")) {
+          navbarCollapse.classList.remove("show");
+          navbarToggler.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      // Close menu when clicking nav links
+      var navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+      navLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (window.innerWidth < 992) {
+            navbarCollapse.classList.remove("show");
+            navbarToggler.setAttribute("aria-expanded", "false");
+          }
+        });
+      });
+    }
+  });
+</script>
+
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 mb-4 mb-md-0">
+        <div class="product-image-container">
+          <!-- Main product image -->
+          <div class="main-image-container mb-3">
+            <img
+              class="img-fluid w-100"
+              id="main-product-image"
+              src=""
+              alt="main product image"
+            />
+          </div>
+          <!-- Thumbnail gallery -->
+          <div class="thumbnail-gallery" id="product-thumbnails">
+            <!-- Thumbnails will be injected here -->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-7 offset-lg-1">
+        <h1 class="mb-4" id="product-title"></h1>
+        <p><strong>Colors: </strong><span id="product-colors"></span></p>
+        <p><strong>Sizes: </strong><span id="product-sizes"></span></p>
+        <p class="price py-4" id="product-price"></p>
+        <button class="btn btn-main mb-5" id="add-to-cart-btn">
+          Add to Cart
+        </button>
+        <div class="content">
+          <p id="product-description"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .product-image-container {
+    position: relative;
+  }
+
+  .main-image-container {
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f8f9fa;
+  }
+
+  .thumbnail-gallery {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+  }
+
+  .thumbnail-item {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+  }
+
+  .thumbnail-item:hover {
+    border-color: #007bff;
+    transform: scale(1.05);
+  }
+
+  .thumbnail-item.active {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+
+  .thumbnail-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .thumbnail-item:hover img {
+    transform: scale(1.1);
+  }
+</style>
+
+<script src="js/cart.js"></script>
+<script>
+  const products = [
+    {
+      id: 1,
+      name: "Apple Watch Series 8",
+      images: [
+        "images/optimized/showcase-1.png",
+        "images/optimized/showcase-2.png",
+        "images/optimized/showcase-3.png",
+        "images/optimized/showcase-4.png",
+      ],
+      colors: ["Midnight", "Starlight", "Silver", "Red"],
+      sizes: ["41mm", "45mm"],
+      price: 399.0,
+      oldPrice: 429.0,
+      description:
+        "The Apple Watch Series 8 features advanced health sensors, crash detection, temperature sensing, and a stunning always-on display. Stay connected, track your fitness, and enjoy seamless integration with your iPhone.",
+      image: "images/optimized/showcase-1.png",
+    },
+    {
+      id: 2,
+      name: "Samsung Galaxy Watch 5",
+      images: [
+        "images/optimized/showcase-2.png",
+        "images/optimized/showcase-1.png",
+        "images/optimized/showcase-3.png",
+      ],
+      colors: ["Graphite", "Silver", "Pink Gold"],
+      sizes: ["40mm", "44mm"],
+      price: 279.0,
+      oldPrice: 299.0,
+      description:
+        "Galaxy Watch 5 offers advanced sleep tracking, body composition analysis, and a durable sapphire crystal display. Perfect for Android users seeking a premium smartwatch experience.",
+      image: "images/optimized/showcase-2.png",
+    },
+    {
+      id: 3,
+      name: "Xiaomi Mi Watch",
+      images: [
+        "images/optimized/showcase-3.png",
+        "images/optimized/showcase-1.png",
+      ],
+      colors: ["Black", "Navy Blue"],
+      sizes: ["46mm"],
+      price: 129.0,
+      oldPrice: 149.0,
+      description:
+        "Xiaomi Mi Watch combines long battery life, built-in GPS, and a vibrant AMOLED display in a lightweight, affordable package.",
+      image: "images/optimized/showcase-3.png",
+    },
+    {
+      id: 4,
+      name: "Fitbit Versa 4",
+      images: [
+        "images/optimized/showcase-4.png",
+        "images/optimized/showcase-2.png",
+      ],
+      colors: ["Black", "Pink Sand", "Waterfall Blue"],
+      sizes: ["One Size"],
+      price: 229.0,
+      oldPrice: 249.0,
+      description:
+        "Fitbit Versa 4 is your fitness companion with 24/7 heart rate tracking, built-in GPS, and personalized sleep profiles.",
+      image: "images/optimized/showcase-4.png",
+    },
+    {
+      id: 5,
+      name: "Redmi Watch 2 Lite",
+      images: ["images/optimized/showcase-5.png"],
+      colors: ["Ivory", "Black", "Blue"],
+      sizes: ["41mm"],
+      price: 69.0,
+      oldPrice: 79.0,
+      description:
+        "Redmi Watch 2 Lite offers essential health tracking, 100+ workout modes, and a bright display at an unbeatable price.",
+      image: "images/optimized/showcase-5.png",
+    },
+    {
+      id: 6,
+      name: "Realme Watch 3 Pro",
+      images: ["images/optimized/showcase-6.png"],
+      colors: ["Black", "Grey"],
+      sizes: ["45mm"],
+      price: 89.0,
+      oldPrice: 99.0,
+      description:
+        "Realme Watch 3 Pro features Bluetooth calling, a large AMOLED display, and comprehensive health monitoring.",
+      image: "images/optimized/showcase-6.png",
+    },
+    {
+      id: 7,
+      name: "Garmin Venu 2",
+      images: ["images/optimized/showcase-7.png"],
+      colors: ["Granite Blue", "Black"],
+      sizes: ["45mm"],
+      price: 349.0,
+      oldPrice: 399.0,
+      description:
+        "Garmin Venu 2 delivers advanced fitness and wellness features, animated workouts, and a stunning AMOLED touchscreen.",
+      image: "images/optimized/showcase-7.png",
+    },
+    {
+      id: 8,
+      name: "Amazfit GTR 4",
+      images: ["images/optimized/showcase-8.png"],
+      colors: ["Superspeed Black", "Racetrack Grey"],
+      sizes: ["46mm"],
+      price: 199.0,
+      oldPrice: 219.0,
+      description:
+        "Amazfit GTR 4 boasts dual-band GPS, 150+ sports modes, and a classic round design with long battery life.",
+      image: "images/optimized/showcase-8.png",
+    },
+  ];
+
+  function getProductId() {
+    const params = new URLSearchParams(window.location.search);
+    return parseInt(params.get("id"), 10);
+  }
+
+  function renderProduct(product) {
+    // Main image
+    const mainImage = document.getElementById("main-product-image");
+    mainImage.src = product.images[0];
+    mainImage.alt = product.name;
+
+    // Thumbnails
+    const thumbnailsDiv = document.getElementById("product-thumbnails");
+    thumbnailsDiv.innerHTML = product.images
+      .map(
+        (img, index) =>
+          `<div class="thumbnail-item ${
+            index === 0 ? "active" : ""
+          }" data-image="${img}" onclick="changeMainImage('${img}', this)">
+            <img src="${img}" alt="product thumbnail ${index + 1}" />
+          </div>`
+      )
+      .join("");
+
+    // Title
+    document.getElementById("product-title").textContent = product.name;
+    // Colors
+    document.getElementById("product-colors").textContent =
+      product.colors.join(", ");
+    // Sizes
+    document.getElementById("product-sizes").textContent =
+      product.sizes.join(", ");
+    // Price
+    document.getElementById(
+      "product-price"
+    ).innerHTML = `$${product.price.toFixed(
+      2
+    )} <s class="price">$${product.oldPrice.toFixed(2)}</s>`;
+    // Description
+    document.getElementById("product-description").textContent =
+      product.description;
+  }
+
+  function changeMainImage(imageSrc, thumbnailElement) {
+    // Update main image
+    const mainImage = document.getElementById("main-product-image");
+    mainImage.src = imageSrc;
+
+    // Update active thumbnail
+    const thumbnails = document.querySelectorAll(".thumbnail-item");
+    thumbnails.forEach((thumb) => thumb.classList.remove("active"));
+    thumbnailElement.classList.add("active");
+  }
+
+  function showError(message) {
+    document.querySelector(
+      ".section .container .row"
+    ).innerHTML = `<div class='col-12 text-center' style='color:red; font-size:1.2rem; margin:40px 0;'>${message}</div>`;
+  }
+
+  function handleProductChange() {
+    try {
+      const id = getProductId();
+      const product = products.find((p) => p.id === id);
+      if (!product) {
+        showError(
+          "Product not found. Please check the URL or select a valid product."
+        );
+        return;
+      }
+      renderProduct(product);
+
+      // Simple cart button setup
+      var $btn = document.getElementById("add-to-cart-btn");
+      if ($btn) {
+        var cart = getCartItems();
+        var inCart = cart.some((item) => item.id === product.id);
+        if (inCart) {
+          $btn.textContent = "Remove from Cart";
+          $btn.classList.remove("btn-main");
+          $btn.classList.add("btn-danger");
+          $btn.classList.add("btn-remove-from-cart");
+        } else {
+          $btn.textContent = "Add to Cart";
+          $btn.classList.remove("btn-danger");
+          $btn.classList.add("btn-main");
+          $btn.classList.remove("btn-remove-from-cart");
+        }
+      }
+
+      // Cart button logic - Simplified and safe
+      var $btn = document.getElementById("add-to-cart-btn");
+      if ($btn) {
+        $btn.onclick = function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          try {
+            // Simple cart toggle without complex logic
+            var cart = getCartItems();
+            var inCart = cart.some((item) => item.id === product.id);
+
+            if (inCart) {
+              removeFromCart(product.id);
+              $btn.textContent = "Add to Cart";
+              $btn.classList.remove("btn-danger");
+              $btn.classList.add("btn-main");
+            } else {
+              addToCart(product, 1);
+              $btn.textContent = "Remove from Cart";
+              $btn.classList.remove("btn-main");
+              $btn.classList.add("btn-danger");
+            }
+          } catch (error) {
+            console.error("Cart button error:", error);
+            // Simple fallback
+            alert("Cart update failed. Please refresh the page and try again.");
+          }
+        };
+      }
+    } catch (error) {
+      console.error("Product change error:", error);
+      showError("Error loading product. Please refresh the page.");
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded", function () {
+    handleProductChange();
+    // SPA-style navigation: intercept product links
+    document.body.addEventListener("click", function (e) {
+      var target = e.target;
+      while (target && target.tagName !== "A") target = target.parentElement;
+      if (target && target.classList.contains("product-link")) {
+        e.preventDefault();
+        var href = target.getAttribute("href");
+        history.pushState({}, "", href);
+        handleProductChange();
+      }
+    });
+  });
+  window.addEventListener("popstate", handleProductChange);
+</script>
+<script src="plugins/jquery/jquery.min.js"></script>
+
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="plugins/slick/slick.min.js"></script>
+
+<script src="js/script.js"></script>
+
+<!-- Lazy Loading Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Lazy loading for images
+  const images = document.querySelectorAll('img[data-src]');
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.onload = function() {
+          img.classList.add('loaded');
+        };
+        imageObserver.unobserve(img);
+      }
+    });
+  });
+
+  images.forEach(img => imageObserver.observe(img));
+});
+</script>
+</body>
+</html>
+ <footer>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <a href="index.html" class="mb-4 d-inline-block">
+            <img src="images/logo.png" alt="Vex" width="100px" />
+          </a>
+          <ul class="list-inline footer-menu">
+            <li class="list-inline-item">
+              <a href="blog.html">Blog</a>
+            </li>
+
+            <li class="list-inline-item">
+              <a href="contact.html">Contact</a>
+            </li>
+
+            <li class="list-inline-item">
+              <a href="terms-conditions.html">Terms &amp; Conditions</a>
+            </li>
+
+            <li class="list-inline-item">
+              <a href="privacy-policy.html">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="copyright-text" style="letter-spacing: 0.5px">
+            Copyright &copy; 2021, Designed &amp; Developed By
+            <a
+              href="https://ahmedmaher-portfolio.vercel.app/"
+              target="_blank"
+              style="font-weight: 600"
+              >Ahmed Maher</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="js/cart.js"></script>
+

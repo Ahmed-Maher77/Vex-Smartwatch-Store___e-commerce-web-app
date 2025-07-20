@@ -1,0 +1,259 @@
+@@include('header.htm') @@include('blocks/navigation.htm')
+
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-5 col-sm-6 mb-5">
+        <h2 class="font-weight-bold mb-4">Central Office</h2>
+        <p>Cairo, Egypt</p>
+        <ul class="list-unstyled contact-list">
+          <li class="mb-3">
+            <a href="tel:+201150353416"
+              ><i class="tf-ion-ios-telephone mr-2"></i>+20 1150353416</a
+            >
+          </li>
+          <li class="mb-3">
+            <a href="mailto:ahmedmaher.dev1@gmail.com"
+              ><i class="tf-ion-email mr-2"></i>ahmedmaher.dev1@gmail.com</a
+            >
+          </li>
+          <li class="mb-3">
+            <i class="tf-ion-ios-location mr-2"></i>Cairo, Egypt
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h2 class="font-weight-bold mb-4">Opening Hours</h2>
+        <ul class="list-unstyled">
+          <li class="mb-2">Monday: 9:00 – 19:00</li>
+
+          <li class="mb-2">Tuesday: 9:00 – 19:00</li>
+
+          <li class="mb-2">Wednesday: 9:00 – 19:00</li>
+
+          <li class="mb-2">Thursday: 9:00 – 19:00</li>
+
+          <li class="mb-2">Friday: 9:00 – 19:00</li>
+
+          <li class="mb-2">Saturday: 9:00 – 19:00</li>
+
+          <li class="mb-2">sunday: 9:00 – 19:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h2 class="font-weight-bold mb-4">Contact</h2>
+        <form action="#" method="POST" class="row" id="contactForm">
+          <div class="col-lg-6 mb-3">
+            <input
+              type="text"
+              class="form-control mb-2"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+          <div class="col-lg-6 mb-3">
+            <input
+              type="email"
+              class="form-control mb-2"
+              id="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+          <div class="col-12 mb-3">
+            <textarea
+              name="message"
+              id="message"
+              class="form-control mb-2"
+              placeholder="Your Message"
+              required
+            ></textarea>
+          </div>
+          <div class="col-12 text-right">
+            <button
+              type="submit"
+              value="send"
+              class="btn btn-main btn-main-sm"
+              id="submitBtn"
+            >
+              Send Now
+            </button>
+          </div>
+        </form>
+
+        <!-- Success Message -->
+        <div
+          id="successMessage"
+          class="alert alert-success mt-3"
+          style="display: none"
+        >
+          <i class="tf-ion-checkmark-circle mr-2"></i>
+          <strong>Thank you!</strong> Your message has been sent successfully.
+          We'll get back to you soon.
+        </div>
+
+        <!-- Error Message -->
+        <div
+          id="errorMessage"
+          class="alert alert-danger mt-3"
+          style="display: none"
+        >
+          <i class="tf-ion-close-circle mr-2"></i>
+          <strong>Oops!</strong> Something went wrong. Please try again.
+        </div>
+
+        <style>
+          /* Contact form success/error message styling */
+          .alert {
+            border: none;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            animation: slideInDown 0.5s ease-out;
+          }
+
+          .alert-success {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            color: #155724;
+            border-left: 4px solid #28a745;
+          }
+
+          .alert-danger {
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+            color: #721c24;
+            border-left: 4px solid #dc3545;
+          }
+
+          .alert i {
+            font-size: 1.2em;
+          }
+
+          /* Loading animation for submit button */
+          .btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+          }
+
+          /* Slide in animation */
+          @keyframes slideInDown {
+            from {
+              opacity: 0;
+              transform: translateY(-20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          /* Form validation styling */
+          .form-control:invalid {
+            border-color: #dc3545;
+            box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+          }
+
+          .form-control:valid {
+            border-color: #28a745;
+            box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+          }
+        </style>
+      </div>
+    </div>
+  </div>
+</section>
+
+@@include('footer.htm') @@include('blocks/footer.htm')
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("contactForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const successMessage = document.getElementById("successMessage");
+    const errorMessage = document.getElementById("errorMessage");
+
+    if (contactForm) {
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Get form data
+        const formData = new FormData(contactForm);
+        const name = formData.get("name");
+        const email = formData.get("email");
+        const message = formData.get("message");
+
+        // Validate form
+        if (!name || !email || !message) {
+          showError("Please fill in all required fields.");
+          return;
+        }
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="tf-ion-load-c mr-2"></i>Sending...';
+
+        // Simulate form submission (replace with actual API call)
+        setTimeout(function () {
+          // Hide any existing messages
+          hideMessages();
+
+          // Show success message
+          showSuccess();
+
+          // Reset form
+          contactForm.reset();
+
+          // Reset button
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = "Send Now";
+
+          // Hide success message after 5 seconds
+          setTimeout(function () {
+            hideMessages();
+          }, 5000);
+        }, 1500); // Simulate 1.5 second delay
+      });
+    }
+
+    function showSuccess() {
+      successMessage.style.display = "block";
+      errorMessage.style.display = "none";
+
+      // Scroll to success message
+      successMessage.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+
+    function showError(message) {
+      errorMessage.innerHTML =
+        '<i class="tf-ion-close-circle mr-2"></i><strong>Error!</strong> ' +
+        message;
+      errorMessage.style.display = "block";
+      successMessage.style.display = "none";
+
+      // Reset button
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = "Send Now";
+
+      // Scroll to error message
+      errorMessage.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+
+    function hideMessages() {
+      successMessage.style.display = "none";
+      errorMessage.style.display = "none";
+    }
+  });
+</script>

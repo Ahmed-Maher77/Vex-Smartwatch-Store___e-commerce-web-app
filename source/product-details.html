@@ -1,0 +1,349 @@
+@@include('header.htm') @@include('blocks/navigation.htm')
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 mb-4 mb-md-0">
+        <div class="product-image-container">
+          <!-- Main product image -->
+          <div class="main-image-container mb-3">
+            <img
+              class="img-fluid w-100"
+              id="main-product-image"
+              src=""
+              alt="main product image"
+            />
+          </div>
+          <!-- Thumbnail gallery -->
+          <div class="thumbnail-gallery" id="product-thumbnails">
+            <!-- Thumbnails will be injected here -->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-7 offset-lg-1">
+        <h1 class="mb-4" id="product-title"></h1>
+        <p><strong>Colors: </strong><span id="product-colors"></span></p>
+        <p><strong>Sizes: </strong><span id="product-sizes"></span></p>
+        <p class="price py-4" id="product-price"></p>
+        <button class="btn btn-main mb-5" id="add-to-cart-btn">
+          Add to Cart
+        </button>
+        <div class="content">
+          <p id="product-description"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .product-image-container {
+    position: relative;
+  }
+
+  .main-image-container {
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f8f9fa;
+  }
+
+  .thumbnail-gallery {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+  }
+
+  .thumbnail-item {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+  }
+
+  .thumbnail-item:hover {
+    border-color: #007bff;
+    transform: scale(1.05);
+  }
+
+  .thumbnail-item.active {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+
+  .thumbnail-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .thumbnail-item:hover img {
+    transform: scale(1.1);
+  }
+</style>
+
+<script src="js/cart.js"></script>
+<script>
+  const products = [
+    {
+      id: 1,
+      name: "Apple Watch Series 8",
+      images: [
+        "images/optimized/showcase-1.png",
+        "images/optimized/showcase-2.png",
+        "images/optimized/showcase-3.png",
+        "images/optimized/showcase-4.png",
+      ],
+      colors: ["Midnight", "Starlight", "Silver", "Red"],
+      sizes: ["41mm", "45mm"],
+      price: 399.0,
+      oldPrice: 429.0,
+      description:
+        "The Apple Watch Series 8 features advanced health sensors, crash detection, temperature sensing, and a stunning always-on display. Stay connected, track your fitness, and enjoy seamless integration with your iPhone.",
+      image: "images/optimized/showcase-1.png",
+    },
+    {
+      id: 2,
+      name: "Samsung Galaxy Watch 5",
+      images: [
+        "images/optimized/showcase-2.png",
+        "images/optimized/showcase-1.png",
+        "images/optimized/showcase-3.png",
+      ],
+      colors: ["Graphite", "Silver", "Pink Gold"],
+      sizes: ["40mm", "44mm"],
+      price: 279.0,
+      oldPrice: 299.0,
+      description:
+        "Galaxy Watch 5 offers advanced sleep tracking, body composition analysis, and a durable sapphire crystal display. Perfect for Android users seeking a premium smartwatch experience.",
+      image: "images/optimized/showcase-2.png",
+    },
+    {
+      id: 3,
+      name: "Xiaomi Mi Watch",
+      images: [
+        "images/optimized/showcase-3.png",
+        "images/optimized/showcase-1.png",
+      ],
+      colors: ["Black", "Navy Blue"],
+      sizes: ["46mm"],
+      price: 129.0,
+      oldPrice: 149.0,
+      description:
+        "Xiaomi Mi Watch combines long battery life, built-in GPS, and a vibrant AMOLED display in a lightweight, affordable package.",
+      image: "images/optimized/showcase-3.png",
+    },
+    {
+      id: 4,
+      name: "Fitbit Versa 4",
+      images: [
+        "images/optimized/showcase-4.png",
+        "images/optimized/showcase-2.png",
+      ],
+      colors: ["Black", "Pink Sand", "Waterfall Blue"],
+      sizes: ["One Size"],
+      price: 229.0,
+      oldPrice: 249.0,
+      description:
+        "Fitbit Versa 4 is your fitness companion with 24/7 heart rate tracking, built-in GPS, and personalized sleep profiles.",
+      image: "images/optimized/showcase-4.png",
+    },
+    {
+      id: 5,
+      name: "Redmi Watch 2 Lite",
+      images: ["images/optimized/showcase-5.png"],
+      colors: ["Ivory", "Black", "Blue"],
+      sizes: ["41mm"],
+      price: 69.0,
+      oldPrice: 79.0,
+      description:
+        "Redmi Watch 2 Lite offers essential health tracking, 100+ workout modes, and a bright display at an unbeatable price.",
+      image: "images/optimized/showcase-5.png",
+    },
+    {
+      id: 6,
+      name: "Realme Watch 3 Pro",
+      images: ["images/optimized/showcase-6.png"],
+      colors: ["Black", "Grey"],
+      sizes: ["45mm"],
+      price: 89.0,
+      oldPrice: 99.0,
+      description:
+        "Realme Watch 3 Pro features Bluetooth calling, a large AMOLED display, and comprehensive health monitoring.",
+      image: "images/optimized/showcase-6.png",
+    },
+    {
+      id: 7,
+      name: "Garmin Venu 2",
+      images: ["images/optimized/showcase-7.png"],
+      colors: ["Granite Blue", "Black"],
+      sizes: ["45mm"],
+      price: 349.0,
+      oldPrice: 399.0,
+      description:
+        "Garmin Venu 2 delivers advanced fitness and wellness features, animated workouts, and a stunning AMOLED touchscreen.",
+      image: "images/optimized/showcase-7.png",
+    },
+    {
+      id: 8,
+      name: "Amazfit GTR 4",
+      images: ["images/optimized/showcase-8.png"],
+      colors: ["Superspeed Black", "Racetrack Grey"],
+      sizes: ["46mm"],
+      price: 199.0,
+      oldPrice: 219.0,
+      description:
+        "Amazfit GTR 4 boasts dual-band GPS, 150+ sports modes, and a classic round design with long battery life.",
+      image: "images/optimized/showcase-8.png",
+    },
+  ];
+
+  function getProductId() {
+    const params = new URLSearchParams(window.location.search);
+    return parseInt(params.get("id"), 10);
+  }
+
+  function renderProduct(product) {
+    // Main image
+    const mainImage = document.getElementById("main-product-image");
+    mainImage.src = product.images[0];
+    mainImage.alt = product.name;
+
+    // Thumbnails
+    const thumbnailsDiv = document.getElementById("product-thumbnails");
+    thumbnailsDiv.innerHTML = product.images
+      .map(
+        (img, index) =>
+          `<div class="thumbnail-item ${
+            index === 0 ? "active" : ""
+          }" data-image="${img}" onclick="changeMainImage('${img}', this)">
+            <img src="${img}" alt="product thumbnail ${index + 1}" />
+          </div>`
+      )
+      .join("");
+
+    // Title
+    document.getElementById("product-title").textContent = product.name;
+    // Colors
+    document.getElementById("product-colors").textContent =
+      product.colors.join(", ");
+    // Sizes
+    document.getElementById("product-sizes").textContent =
+      product.sizes.join(", ");
+    // Price
+    document.getElementById(
+      "product-price"
+    ).innerHTML = `$${product.price.toFixed(
+      2
+    )} <s class="price">$${product.oldPrice.toFixed(2)}</s>`;
+    // Description
+    document.getElementById("product-description").textContent =
+      product.description;
+  }
+
+  function changeMainImage(imageSrc, thumbnailElement) {
+    // Update main image
+    const mainImage = document.getElementById("main-product-image");
+    mainImage.src = imageSrc;
+
+    // Update active thumbnail
+    const thumbnails = document.querySelectorAll(".thumbnail-item");
+    thumbnails.forEach((thumb) => thumb.classList.remove("active"));
+    thumbnailElement.classList.add("active");
+  }
+
+  function showError(message) {
+    document.querySelector(
+      ".section .container .row"
+    ).innerHTML = `<div class='col-12 text-center' style='color:red; font-size:1.2rem; margin:40px 0;'>${message}</div>`;
+  }
+
+  function handleProductChange() {
+    try {
+      const id = getProductId();
+      const product = products.find((p) => p.id === id);
+      if (!product) {
+        showError(
+          "Product not found. Please check the URL or select a valid product."
+        );
+        return;
+      }
+      renderProduct(product);
+
+      // Simple cart button setup
+      var $btn = document.getElementById("add-to-cart-btn");
+      if ($btn) {
+        var cart = getCartItems();
+        var inCart = cart.some((item) => item.id === product.id);
+        if (inCart) {
+          $btn.textContent = "Remove from Cart";
+          $btn.classList.remove("btn-main");
+          $btn.classList.add("btn-danger");
+          $btn.classList.add("btn-remove-from-cart");
+        } else {
+          $btn.textContent = "Add to Cart";
+          $btn.classList.remove("btn-danger");
+          $btn.classList.add("btn-main");
+          $btn.classList.remove("btn-remove-from-cart");
+        }
+      }
+
+      // Cart button logic - Simplified and safe
+      var $btn = document.getElementById("add-to-cart-btn");
+      if ($btn) {
+        $btn.onclick = function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          try {
+            // Simple cart toggle without complex logic
+            var cart = getCartItems();
+            var inCart = cart.some((item) => item.id === product.id);
+
+            if (inCart) {
+              removeFromCart(product.id);
+              $btn.textContent = "Add to Cart";
+              $btn.classList.remove("btn-danger");
+              $btn.classList.add("btn-main");
+            } else {
+              addToCart(product, 1);
+              $btn.textContent = "Remove from Cart";
+              $btn.classList.remove("btn-main");
+              $btn.classList.add("btn-danger");
+            }
+          } catch (error) {
+            console.error("Cart button error:", error);
+            // Simple fallback
+            alert("Cart update failed. Please refresh the page and try again.");
+          }
+        };
+      }
+    } catch (error) {
+      console.error("Product change error:", error);
+      showError("Error loading product. Please refresh the page.");
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded", function () {
+    handleProductChange();
+    // SPA-style navigation: intercept product links
+    document.body.addEventListener("click", function (e) {
+      var target = e.target;
+      while (target && target.tagName !== "A") target = target.parentElement;
+      if (target && target.classList.contains("product-link")) {
+        e.preventDefault();
+        var href = target.getAttribute("href");
+        history.pushState({}, "", href);
+        handleProductChange();
+      }
+    });
+  });
+  window.addEventListener("popstate", handleProductChange);
+</script>
+@@include('footer.htm') @@include('blocks/footer.htm')

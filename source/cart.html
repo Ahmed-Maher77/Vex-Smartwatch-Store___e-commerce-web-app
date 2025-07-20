@@ -1,0 +1,111 @@
+@@include('header.htm') @@include('blocks/navigation.htm')
+
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <h1
+          class="font-weight-bold mb-5"
+          style="font-size: clamp(1.5rem, 5vw, 2.5rem)"
+        >
+          Your Cart
+        </h1>
+        <div id="cart-list"></div>
+        <div
+          id="cart-empty"
+          style="
+            display: none;
+            text-align: center;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: #888;
+          "
+        >
+          Your cart is empty.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  function getCartItems() {
+    const items = localStorage.getItem("cartItems");
+    return items ? JSON.parse(items) : [];
+  }
+  function setCartItems(items) {
+    localStorage.setItem("cartItems", JSON.stringify(items));
+  }
+  function renderCart() {
+    var cart = getCartItems();
+    var $list = document.getElementById("cart-list");
+    $list.innerHTML = "";
+    if (cart.length === 0) {
+      document.getElementById("cart-empty").style.display = "";
+      return;
+    } else {
+      document.getElementById("cart-empty").style.display = "none";
+    }
+    var total = 0;
+    cart.forEach(function (item, idx) {
+      var subtotal = item.price * item.count;
+      total += subtotal;
+      $list.innerHTML += `
+      <div class="row align-items-center mb-4 p-3" style="border-bottom:1px solid #eee;">
+        <div class="col-2"><img src="${
+          item.image
+        }" class="img-fluid" style="max-width:80px;"></div>
+        <div class="col-3" style="font-size: clamp(0.85rem, 2vw, 1rem);">${
+          item.name
+        }</div>
+        <div class="col-2" style="font-size: clamp(0.85rem, 2vw, 1rem);">$${item.price.toFixed(
+          2
+        )}</div>
+        <div class="col-2 d-flex align-items-center justify-content-center">
+          <button class="btn btn-main-sm btn-decrease" data-idx="${idx}" style="font-size: clamp(0.8rem, 1.8vw, 1rem);">-</button>
+          <span style="margin:0 10px; font-size: clamp(1rem, 2.5vw, 1.2rem); font-weight: 500;">${
+            item.count
+          }</span>
+          <button class="btn btn-main-sm btn-increase" data-idx="${idx}" style="font-size: clamp(0.8rem, 1.8vw, 1rem);">+</button>
+        </div>
+        <div class="col-2" style="font-size: clamp(0.85rem, 2vw, 1rem);">$${subtotal.toFixed(
+          2
+        )}</div>
+        <div class="col-1">
+          <button class="btn btn-danger btn-remove" data-idx="${idx}" style="padding:2px 10px; font-size: clamp(0.8rem, 1.8vw, 1rem);">&times;</button>
+        </div>
+      </div>
+    `;
+    });
+    $list.innerHTML += `<div class="row justify-content-end mt-4"><div class="col-4 text-right"><h4 style="font-size: clamp(1.1rem, 3vw, 1.5rem);">Total: $${total.toFixed(
+      2
+    )}</h4></div></div>`;
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    renderCart();
+    document
+      .getElementById("cart-list")
+      .addEventListener("click", function (e) {
+        var idx = e.target.getAttribute("data-idx");
+        if (e.target.classList.contains("btn-remove")) {
+          var cart = getCartItems();
+          cart.splice(idx, 1);
+          setCartItems(cart);
+          renderCart();
+        }
+        if (e.target.classList.contains("btn-increase")) {
+          var cart = getCartItems();
+          cart[idx].count++;
+          setCartItems(cart);
+          renderCart();
+        }
+        if (e.target.classList.contains("btn-decrease")) {
+          var cart = getCartItems();
+          if (cart[idx].count > 1) {
+            cart[idx].count--;
+            setCartItems(cart);
+            renderCart();
+          }
+        }
+      });
+  });
+</script>
+@@include('footer.htm') @@include('blocks/footer.htm')
