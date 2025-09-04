@@ -1,4 +1,4 @@
-# 🕒 Vex - Smartwatch Store
+# Vex - Smartwatch Store
 
 **Vex** is a modern and responsive single-page e-commerce web application dedicated to selling premium smartwatches from top global brands like Apple, Samsung, Fitbit, and Garmin. Designed with performance and user experience in mind, Vex features a detailed product catalog, persistent shopping cart, smooth page transitions, and optimized assets.
 
@@ -56,7 +56,7 @@
 ## 👀 Website Preview
 
 <a href="https://vex-smartwatch-store.netlify.app/" title="demo">
-  <img src="uploaded-img-on-github-readme" alt="website preview" width="400">
+  <img src="https://github.com/user-attachments/assets/2ae54077-9fb5-499f-a5bc-faabfe21d3fb" alt="website preview - UI Mockup" width="400">
 </a>
 
 ---
